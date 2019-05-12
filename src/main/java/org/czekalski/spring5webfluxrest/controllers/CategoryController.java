@@ -3,11 +3,13 @@ package org.czekalski.spring5webfluxrest.controllers;
 
 import org.czekalski.spring5webfluxrest.domain.Category;
 import org.czekalski.spring5webfluxrest.repositories.CategoryRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.reactivestreams.Publisher;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+
 
 @RestController
 public class CategoryController {
@@ -33,6 +35,11 @@ public class CategoryController {
     }
 
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/api/v1/categories")
+    Mono<Void> create(@RequestBody  Publisher<Category> categoryStream){
+        return categoryRepository.saveAll(categoryStream).then();
+    }
 
 
 }
