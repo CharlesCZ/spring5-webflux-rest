@@ -1,6 +1,5 @@
 package org.czekalski.spring5webfluxrest.domain;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Data
 @Document
+@NoArgsConstructor
+@AllArgsConstructor
 public class Category {
 
     @Id

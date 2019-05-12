@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Data
 @Document
+@NoArgsConstructor
+@AllArgsConstructor
 public class Vendor {
 
     private String id;

@@ -44,13 +44,18 @@ private final CategoryRepository categoryRepository;
     private void loadingVendors(MongoOperations mongoOps) {
 
            vendorRepository.save(Vendor.builder()
-                   .firstName("Pan Bucik")
+                   .firstName("Bucik")
                    .lastName("Bucikowski")
                    .build()).block();
 
            vendorRepository.save(Vendor.builder()
-                   .firstName("Pan Samochodzik")
+                   .firstName("Samochodzik")
                    .lastName("Samochodzikowski")
+                   .build()).block();
+
+           vendorRepository.save(Vendor.builder()
+           .firstName("Elektro")
+           .lastName("Elektroniczny")
                    .build()).block();
 
            log.info("Loaded Vendors: "+vendorRepository.count().block());

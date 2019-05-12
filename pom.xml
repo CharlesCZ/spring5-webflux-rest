@@ -15,9 +15,12 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -49,7 +52,9 @@
             <artifactId>lombok</artifactId>
             <version>1.18.8</version>
         </dependency>
+
     </dependencies>
+
 
     <build>
         <plugins>
@@ -58,14 +63,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                    <configuration>
-                        <release>8</release>
-                    </configuration>
-                </plugin>
 
         </plugins>
     </build>
