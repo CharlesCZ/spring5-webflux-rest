@@ -52,7 +52,7 @@ webTestClient=WebTestClient.bindToController(vendorController).build();
     }
 
     @Test
-    public void createVendor(){
+    public void testCreateVendor(){
         BDDMockito.given(vendorRepository.saveAll(any(Publisher.class)))
                 .willReturn(Flux.just(Vendor.builder().build()));
 
@@ -68,7 +68,7 @@ webTestClient=WebTestClient.bindToController(vendorController).build();
     }
 
     @Test
-    public void updateVendor(){
+    public void testUpdateVendor(){
         BDDMockito.given(vendorRepository.save(any(Vendor.class)))
                 .willReturn(Mono.just(Vendor.builder().build()));
 
